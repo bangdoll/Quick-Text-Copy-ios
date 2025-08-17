@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Quick Text Copy — 一鍵複製常用文字</title>
+  <meta name="description" content="從 iOS 到 Chrome，一致操作、兩分鐘上手。把網址隨時一鍵複製。">
+  <meta property="og:title" content="Quick Text Copy — 一鍵複製常用網址">
+  <meta property="og:description" content="從 iOS 到 Chrome，一致操作、兩分鐘上手。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="og.png">
+  <style>
+    :root { --bg:#0b0b0f; --fg:#e8e8ef; --muted:#a3a3b2; --accent:#6cf; }
+    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--fg)}
+    .wrap{max-width:860px;margin:0 auto;padding:28px}
+    header{padding:28px 0 8px}
+    h1{font-size:32px;margin:0 0 8px}
+    p{color:var(--muted);line-height:1.6}
+    .cta{display:flex;gap:12px;margin:20px 0 28px;flex-wrap:wrap}
+    .btn{padding:12px 16px;border-radius:10px;border:1px solid #2a2a36;text-decoration:none;color:var(--fg);background:#141421}
+    .btn.primary{background:var(--accent);color:#001124;border:none;font-weight:600}
+    .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:16px 0 24px}
+    .card{border:1px solid #2a2a36;border-radius:12px;padding:16px;background:#12121b}
+    iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:12px;overflow:hidden}
+    footer{border-top:1px solid #2a2a36;margin-top:28px;padding-top:16px;color:#8d8da1}
+    small{color:#8d8da1}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Quick Text Copy — 一鍵複製常用網址</h1>
+      <p>從 iOS 到 Chrome，一致操作、兩分鐘上手。把常用網址隨時一鍵複製。</p>
+      <div class="cta">
+        <a class="btn primary" href="https://youtu.be/9ODd9qZiHdI">觀看 兩分鐘 Demo</a>
+        <a class="btn" id="apply" href="https://forms.gle/XHYBMsKQ8pDk4ssm6?utm_source=landing&utm_medium=cta&utm_campaign=early_access">申請早鳥測試</a>
+      </div>
+    </header>
+
+    <section class="grid">
+      <div class="card"><strong>即貼即用</strong><br>把網址，一鍵複製。</div>
+      <div class="card"><strong>跨場景一致</strong><br>iOS 與 Chrome 擴充一致命名與操作手感。</div>
+      <div class="card"><strong>上手超快</strong><br>兩分鐘影片就懂核心用法。</div>
+    </section>
+
+    <section id="demo">
+      <iframe src="https://www.youtube.com/embed/9ODd9qZiHdI" title="Quick Text Copy Demo" allowfullscreen></iframe>
+      <p><small>想搶先體驗？按上方「申請早鳥測試」，我們將寄送測試邀請與更新。</small></p>
+    </section>
+
+    <section class="card">
+      <strong>使用情境</strong>
+      <p>客服／銷售 表單與電商常用網址填寫、內容創作常用開場與收尾。</p>
+      <a class="btn" href="https://forms.gle/TAu4MXiPQFzLiPZn6">告訴我們你的情境</a>
+    </section>
+
+    <footer>
+      <p>將於 2025-08-20（週三）例會現場分享與 Q&amp;A，歡迎交流。</p>
+      <p><small>我們只會用你的 Email 發送測試與更新，不做其它用途。</small></p>
+    </footer>
+  </div>
+
+  <script>
+    // 若頁面帶有 ?src=xxx，轉傳到表單作為來源追蹤
+    const params = new URLSearchParams(location.search);
+    const src = params.get('src');
+    if (src) {
+      const links = document.querySelectorAll('a[href^="https://forms.gle/XHYBMsKQ8pDk4ssm6"]');
+      links.forEach(a => a.href += "&src=" + encodeURIComponent(src));
+    }
+  </script>
+</body>
+</html>
